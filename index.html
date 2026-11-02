@@ -3,392 +3,582 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayhan - Portfolio</title>
+    <title>Rayhan Hibatullah — Portfolio</title>
+    
+    <!-- Preconnect & Font Modern (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Gambar Utama agar instan saat dibuka -->
+    <link rel="preload" as="image" href="IMG_20260223_235900.png">
+    
+    <!-- Font Awesome (Load secara non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     
-    <div class="header-container">
-        <nav class="navbar">
-            <div class="logo">
-                <i class="fas fa-code"></i> Reyyy
-            </div>
+    <!-- Navbar -->
+    <header class="header-container">
+        <nav class="navbar container">
+            <a href="#home" class="logo">
+                <i class="fas fa-code"></i> Rayhan
+            </a>
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Beranda</a></li>
                 <li><a href="#about" class="nav-link">Tentang Saya</a></li>
                 <li><a href="#education" class="nav-link">Pendidikan</a></li>
+                <li><a href="#projects" class="nav-link">Project</a></li>
                 <li><a href="#skills" class="nav-link">Skill</a></li>
+                <li class="mobile-cta"><a href="#footer" class="btn btn-primary">Hubungi Saya</a></li>
             </ul>
 
-            <a href="#footer" class="btn-cta">Hubungi Saya</a>
+            <div class="nav-actions">
+                <!-- Tombol Toggle Terang / Gelap -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema Terang atau Gelap" title="Ganti Tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
+                <a href="#footer" class="btn btn-primary desktop-cta">Hubungi Saya</a>
+
+                <button class="hamburger" id="hamburger" aria-label="Buka Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
-    </div>
+    </header>
 
-    <section id="home" class="section home-section">
-        <div class="home-content">
-            <div class="home-text">
-                <h1>Halo, Saya Rayhan <span class="highlight">Hibatullah</span></h1>
-                <p class="subtitle">IT Student | Data Administrator | Statistic Agent</p>
-                <p class="description">Mahasiswa Teknik Informatika yang berpengalaman mengelola sistem administrasi publik (ARKAS & Dapodik) dan pengolahan data statistik. Memiliki kombinasi skill teknis IT dan ketelitian administratif untuk solusi operasional yang efisien.</p>  
-                <div class="home-buttons">
-                    <a href="#skills" class="btn btn-primary">Skill & Pengalaman</a>
-                    <a href="#about" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section home-section">
+            <div class="container home-content">
+                <div class="home-text">
+                    <span class="badge-role">IT Support &bull; Web Developer &bull; Data Administrator</span>
+                    <h1>Halo, Saya Rayhan <span class="highlight">Hibatullah</span></h1>
+                    <p class="description">Mahasiswa Teknik Informatika yang berpengalaman dalam dukungan infrastruktur IT, pengembangan aplikasi web (Back-End & Fullstack), pengelolaan sistem administrasi publik (ARKAS & Dapodik), serta pengolahan data statistik.</p>  
+                    
+                    <div class="home-buttons">
+                        <a href="#projects" class="btn btn-primary">Lihat Project WebApp</a>
+                        <a href="#education" class="btn btn-secondary">Pengalaman & Pendidikan</a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/GitReyy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rayhan-hibatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/gitreyy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/GitReyy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/rayhan-hibatullah" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/areyyvazia" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                
+                <div class="home-image">  
+                    <div class="profile-image">
+                        <img src="profile.png" alt="Foto profil Rayhan Hibatullah" width="400" height="400" fetchpriority="high" decoding="async">
+                    </div>
                 </div>
             </div>
-            <div class="home-image">  
-                <div class="profile-image">
-                    <img src="IMG_20260223_235900.png" alt="Foto profil Rayhan" class="img-fluid" decoding="async">
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="section-subtitle">Perpaduan keahlian teknis IT, pengembangan perangkat lunak, dan akurasi data.</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Saya adalah mahasiswa Teknik Informatika di <strong>Universitas Nurul Jadid</strong> yang berfokus pada integrasi teknologi informasi dan pengembangan aplikasi web untuk efisiensi sistem kerja. Berpengalaman langsung menangani operasional teknis sebagai <strong>IT Support di PLN Nusantara Power UP Paiton</strong> serta aktif dalam berbagai kompetisi IT.</p>
+                        <p>Memiliki rekam jejak profesional dalam manajemen operasional dan keuangan sebagai <strong>Staff Tata Usaha serta Operator BOS</strong>. Saya terbiasa mengelola ekosistem administrasi digital, koordinasi sistem pemerintah (ARKAS/Dapodik), hingga penyusunan laporan yang akuntabel.</p>
+                        <p>Sebagai lulusan program <strong>Agen Statistik BPS Kabupaten Probolinggo</strong>, saya juga menguasai pengolahan data statistik dan transformasi data kompleks menjadi visualisasi infografis yang komunikatif untuk mendukung pengambilan keputusan berbasis data.</p>
+                    </div>
+
+                    <div class="activity-gallery">
+                        <div class="activity-card" tabindex="0">
+                            <img src="agen.png" alt="Agen Statistik BPS" width="320" height="220" loading="lazy" decoding="async">
+                            <div class="overlay"><span class="activity-title">Agen Statistik BPS</span></div>
+                        </div>
+                        <div class="activity-card" tabindex="0">
+                            <img src="mtqmn.png" alt="MTQMN 2025" width="320" height="220" loading="lazy" decoding="async">
+                            <div class="overlay"><span class="activity-title">MTQMN 2025</span></div>
+                        </div>
+                        <div class="activity-card" tabindex="0">
+                            <img src="image.png" alt="Business Plan" width="320" height="220" loading="lazy" decoding="async">
+                            <div class="overlay"><span class="activity-title">Business Plan</span></div>
+                        </div>
+                        <div class="activity-card" tabindex="0">
+                            <img src="IMG_6310.JPG.jpeg" alt="PLN Nusantara Power" width="320" height="220" loading="lazy" decoding="async">
+                            <div class="overlay"><span class="activity-title">IT Support — PLN NP Paiton</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            
-            <div class="activity-gallery">
-                <div class="activity-card">
-                    <img src="agen.png" alt="Agen Statistik BPS" loading="lazy" decoding="async">
-                    <div class="overlay"><p class="activity-title">Agen Statistik BPS</p></div>
+        <!-- Education & Experience Section -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pendidikan & Pengalaman</h2>
+                    <p class="section-subtitle">Perjalanan akademik, karier profesional, dan sertifikasi kompetensi.</p>
                 </div>
-                <div class="activity-card">
-                    <img src="mtqmn.png" alt="MTQMN 2025" loading="lazy" decoding="async">
-                    <div class="overlay"><p class="activity-title">MTQMN 2025</p></div>
+                
+                <div class="tabs" role="tablist">
+                    <button class="tab-button active" data-tab="experience" role="tab">
+                        <i class="fas fa-briefcase"></i> Pengalaman
+                    </button>
+                    <button class="tab-button" data-tab="education-tab" role="tab">
+                        <i class="fas fa-graduation-cap"></i> Pendidikan & Bootcamp
+                    </button>
+                    <button class="tab-button" data-tab="certificates-tab" role="tab">
+                        <i class="fas fa-award"></i> Sertifikat
+                    </button>
                 </div>
-                <div class="activity-card">
-                    <img src="image.png" alt="Business Plan" loading="lazy" decoding="async">
-                    <div class="overlay"><p class="activity-title">Business Plan</p></div>
-                </div>
-                <div class="activity-card">
-                    <img src="C.png" alt="Coming Soon" loading="lazy" decoding="async">
-                    <div class="overlay"><p class="activity-title">Coming Soon</p></div>
-                </div>
-            </div>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Saya adalah mahasiswa Teknik Informatika di Universitas Nurul Jadid yang berfokus pada integrasi teknologi informasi untuk efisiensi sistem kerja. Melalui keaktifan dalam berbagai kompetisi IT dan pelatihan profesional, saya terus mengasah kemampuan teknis dan pola pikir analitis guna menghadirkan solusi digital yang inovatif, relevan, dan adaptif terhadap kebutuhan industri.</p>
-                    <p>Memiliki rekam jejak profesional dalam manajemen operasional dan keuangan sebagai Staff Tata Usaha serta Bendahara BOS. Saya terbiasa mengelola ekosistem administrasi digital, koordinasi sistem pemerintah (ARKAS/Dapodik), hingga penyusunan laporan keuangan yang akuntabel. Pengalaman ini membentuk karakter kerja saya yang sangat detail, disiplin, dan mampu bekerja di bawah standar akurasi yang tinggi.</p>
-                    <p>Sebagai lulusan program Agen Statistik BPS Kabupaten Probolinggo, saya memiliki kompetensi dalam pengolahan data statistik dan diseminasi informasi. Saya mahir mentransformasikan data kompleks menjadi visualisasi infografis yang komunikatif untuk mendukung pengambilan keputusan berbasis data. Saya menjunjung tinggi integritas serta kerahasiaan data dalam setiap tanggung jawab profesional yang saya jalankan.</p>
+                <!-- Tab 1: Experience -->
+                <div class="tab-content active" id="experience">
+                    <div class="experience-grid">
+                        <div class="experience-column">
+                            <h3 class="column-title"><i class="fas fa-briefcase"></i> Kerja & Magang</h3>
+                            <div class="timeline">
+                                <!-- Pengalaman Baru: PLN Nusantara Power -->
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">Magang &bull; IT Support</span>
+                                        <h4>IT Support Intern</h4>
+                                        <p class="company">PT PLN Nusantara Power UP Paiton</p>
+                                        <p class="description">Menangani troubleshooting perangkat keras & lunak, pemeliharaan jaringan lokal (LAN), dukungan teknis operasional pegawai, serta memastikan keandalan sistem teknologi informasi di lingkungan unit pembangkitan.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2025 — Sekarang</span>
+                                        <h4>Agen Statistik</h4>
+                                        <p class="company">BPS Kab. Probolinggo</p>
+                                        <p class="description">Mengolah data statistik mentah dan mentransformasikannya menjadi infografis visual yang komunikatif guna menyederhanakan data kompleks bagi publik.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2023 — Sekarang</span>
+                                        <h4>Staff TU dan Operator BOS</h4>
+                                        <p class="company">SMP Islam Banyuglugur</p>
+                                        <p class="description">Mengelola administrasi surat-menyurat, pengarsipan dokumen, serta manajemen keuangan sekolah melalui sistem ARKAS dan penyusunan SPJ/LPJ yang akuntabel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-column">
+                            <h3 class="column-title"><i class="fas fa-trophy"></i> Lomba & Kompetisi</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2025</span>
+                                        <h4>MTQMN 2025 — Univ. Lambung Mangkurat</h4>
+                                        <p class="company">Desain Aplikasi Qur'an</p>
+                                        <p class="description">Merancang dan membangun antarmuka website yang responsif serta user-friendly, dengan fokus pada pengintegrasian konten tematik dan estetika modern.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2025</span>
+                                        <h4>Cipta Nusantara Fest 2025 — UNY</h4>
+                                        <p class="company">Business Plan - Industri Kreatif</p>
+                                        <p class="description">Menerjemahkan ide bisnis ke dalam desain produk dan prototipe digital, serta mengembangkan strategi solusi cloud storage yang aman dan efisien.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="education" class="section education-section">
-        <div class="container">
-            <h2 class="section-title">Pendidikan & Pengalaman</h2>
-            
-            <div class="tabs">
-                <button class="tab-button active" data-tab="experience">
-                    <i class="fas fa-briefcase"></i> Pengalaman
-                </button>
-                <button class="tab-button" data-tab="education-tab">
-                    <i class="fas fa-graduation-cap"></i> Pendidikan
-                </button>
-                <button class="tab-button" data-tab="certificates-tab">
-                    <i class="fas fa-award"></i> Sertifikat
-                </button>
-            </div>
-
-            <div class="tab-content active" id="experience">
-                <div class="experience-section">
-                    <h4 class="experience-title"><i class="fas fa-briefcase"></i> Pengalaman Kerja dan Magang</h4>
-                    <div class="timeline">
+                <!-- Tab 2: Education & Dicoding Summary -->
+                <div class="tab-content" id="education-tab">
+                    <div class="timeline max-w-md">
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3>Staff TU dan Operator BOS</h3>
-                                <p class="company">SMP Islam Banyuglugur - 2023 hingga Sekarang</p>
-                                <p class="description">Mengelola administrasi surat-menyurat, pengarsipan dokumen, serta manajemen keuangan sekolah melalui sistem ARKAS dan penyusunan SPJ/LPJ yang akuntabel.</p>
+                                <span class="timeline-date">2023 — Sekarang</span>
+                                <h4>S1 Teknik Informatika</h4>
+                                <p class="company">Universitas Nurul Jadid</p>
+                                <p class="description">Fokus pada rekayasa perangkat lunak, Fullstack Web Development, dan manajemen basis data dengan keaktifan di berbagai kompetisi teknologi.</p>
                             </div>
                         </div>
+                        
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3>Agen Statistik</h3>
-                                <p class="company">BPS Kab. Probolinggo - 2025 hingga Sekarang</p>
-                                <p class="description">Mengolah data statistik mentah dan mentransformasikannya menjadi infografis visual yang komunikatif guna menyederhanakan data kompleks agar lebih mudah dipahami oleh publik dan pemangku kepentingan.</p>
+                                <span class="timeline-date">2026 &bull; 88+ Jam Pembelajaran</span>
+                                <h4>Beasiswa Full Stack / Back-End Developer (Dicoding)</h4>
+                                <p class="company">Coding Camp 2026 powered by DBS Foundation</p>
+                                <p class="description">Menyelesaikan kurikulum intensif berstandar industri pada 3 pilar utama:</p>
+                                
+                                <!-- Ringkasan Poin Penting Dicoding -->
+                                <div class="course-pillars">
+                                    <div class="pillar-card">
+                                        <div class="pillar-header">
+                                            <span class="pillar-title"><i class="fab fa-python"></i> Pemrograman Python</span>
+                                            <span class="pillar-hours">~56 Jam</span>
+                                        </div>
+                                        <p>Menguasai fondasi Python, manipulasi struktur data (Array, Matriks), Control Flow, Subprogram, OOP, PEP8 Style Guide, Unit Testing, hingga penggunaan library populer.</p>
+                                    </div>
+
+                                    <div class="pillar-card">
+                                        <div class="pillar-header">
+                                            <span class="pillar-title"><i class="fas fa-server"></i> Back-End & Django REST API</span>
+                                            <span class="pillar-hours">~23 Jam</span>
+                                        </div>
+                                        <p>Membangun RESTful API menggunakan Django & Django REST Framework (DRF), pengujian otomatis/manual dengan Postman, serta deployment web service ke Cloud.</p>
+                                    </div>
+
+                                    <div class="pillar-card">
+                                        <div class="pillar-header">
+                                            <span class="pillar-title"><i class="fas fa-cloud"></i> Google Cloud Platform (GCP)</span>
+                                            <span class="pillar-hours">~9.5 Jam</span>
+                                        </div>
+                                        <p>Implementasi Google Compute Engine (VM), jaringan VPC, Cloud Storage & Database, keamanan Cloud IAM & enkripsi, serta manajemen efisiensi biaya (CapEx/OpEx).</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="experience-section">
-                    <h4 class="experience-title"><i class="fas fa-trophy"></i> Pengalaman Lomba & Pelatihan</h4>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>MTQMN 2025 - Universitas Lambung Mangkurat</h3>
-                                <p class="company">Desain Aplikasi Qur'an</p>
-                                <p class="description">Merancang dan membangun antarmuka website yang responsif serta user-friendly, dengan fokus pada pengintegrasian konten tematik yang relevan dan estetika visual yang modern.</p>
+                <!-- Tab 3: Certificates -->
+                <div class="tab-content" id="certificates-tab">
+                    <div class="certificates-gallery">
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <img src="sertifikat.jpeg" alt="Sertifikat Business Plan" width="400" height="280" loading="lazy" decoding="async">
+                            </div>
+                            <div class="certificate-info">
+                                <h4>Business Plan - Industri Kreatif</h4>
+                                <p class="certificate-date">Tahun: 2025</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Cipta Nusantara Fest 2025 - UNY</h3>
-                                <p class="company">Business Plan - Industri Kreatif</p>
-                                <p class="description">Menerjemahkan ide bisnis ke dalam desain produk dan prototipe digital, serta mengembangkan strategi solusi cloud storage yang aman dan efisien dalam kompetisi Business Plan.</p>
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <img src="Universitas Nurul Jadid - RAYHAN HIBATULLAH_page-0001.jpg" alt="Sertifikat MTQMN" width="400" height="280" loading="lazy" decoding="async">
+                            </div>
+                            <div class="certificate-info">
+                                <h4>MTQMN - Desain Aplikasi Qur'an</h4>
+                                <p class="certificate-date">Tahun: 2025</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="education-tab">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Mahasiswa Teknik Informatika</h3>
-                            <p class="company">Universitas Nurul Jadid</p>
-                            <p class="year">Masuk: 2023 | Sekarang</p>
-                            <p class="description">Fokus pada Fullstack Development dengan jiwa kompetitif tinggi, serta memiliki antusiasme besar untuk terus mendalami teknologi terbaru.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Beasiswa Progresif Alur Full Stack Web Developer</h3>
-                            <p class="company">Coding Camp 2026 powered by DBS Foundation</p>
-                            <p class="year">Tahun: 2026</p>
-                            <p class="description">Sedang dalam proses pembelajaran intensif pengembangan web.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="certificates-tab">
-                <div class="certificates-gallery">
-                    <div class="certificate-item">
-                        <div class="certificate-image">
-                            <img src="sertifikat.jpeg" alt="Sertifikat Business Plan" loading="lazy" decoding="async">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>Business Plan - Industri Kreatif</h4>
-                            <p class="certificate-date">Tahun: 2025</p>
-                        </div>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-image">
-                            <img src="Universitas Nurul Jadid - RAYHAN HIBATULLAH_page-0001.jpg" alt="Sertifikat MTQMN" loading="lazy" decoding="async">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>MTQMN - Desain Aplikasi Qur'an</h4>
-                            <p class="certificate-date">Tahun: 2025</p>
-                        </div>
-                    </div>
-                    <div class="certificate-item">
-                        <div class="certificate-image">
-                            <img src="image copy.png" alt="Sertifikat BPS" loading="lazy" decoding="async">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>Infografis Terbaik - BPS Kab. Probolinggo</h4>
-                            <p class="certificate-date">Tahun: 2025</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">Skill & Keahlian</h2>
-            
-            <div class="tabs">
-                <button class="tab-button active" data-tab="hard-skills">
-                    <i class="fas fa-laptop-code"></i> Hard Skills
-                </button>
-                <button class="tab-button" data-tab="soft-skills">
-                    <i class="fas fa-handshake"></i> Soft Skills
-                </button>
-            </div>
-
-            <div class="tab-content active" id="hard-skills">
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>HTML, CSS & JavaScript</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <img src="image copy.png" alt="Sertifikat BPS" width="400" height="280" loading="lazy" decoding="async">
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>UI Design & Typography</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Responsive Web Design</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>PHP (Native/Framework)</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 93%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>MySQL Database Management</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 94%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Git & GitHub</span>
-                                    <span class="skill-badge intermediate">Intermediate</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-palette"></i> Visual Design & Layouting</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Infografis</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Typography</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Branding Assets</span>
-                                    <span class="skill-badge intermediate">Intermediate</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-pie"></i> Data & Administration</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Analisis Sistem Statistik</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Administrasi Sistem (ARKAS)</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span>Documentation</span>
-                                    <span class="skill-badge advanced">Advanced</span>
-                                </div>
-                                <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+                            <div class="certificate-info">
+                                <h4>Infografis Terbaik - BPS Kab. Probolinggo</h4>
+                                <p class="certificate-date">Tahun: 2025</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="tab-content" id="soft-skills">
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-lightbulb"></i> Profesionalisme</h3>
-                        <ul class="soft-skill-list">
-                            <li><i class="fas fa-check-circle"></i><div><strong>Analytic Problem Solving:</strong> Kemampuan memecahkan masalah kompleks yang teruji melalui kompetisi IT dan pengembangan sistem.</div></li>
-                            <li><i class="fas fa-check-circle"></i><div><strong>High Attention to Detail:</strong> Tingkat ketelitian tinggi dalam pengelolaan data statistik dan administrasi sistem keuangan (ARKAS).</div></li>
-                            <li><i class="fas fa-check-circle"></i><div><strong>Adaptive Learning:</strong> Cepat menguasai teknologi baru dan prosedur administrasi yang dinamis.</div></li>
-                        </ul>
+        <!-- Bagian Project WebApp Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Project WebApp</h2>
+                    <p class="section-subtitle">Aplikasi web produksi (live) dan layanan sistem yang telah saya kembangkan.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: GradsFantasy -->
+                    <article class="project-card">
+                        <div class="project-top">
+                            <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
+                            <div class="project-links">
+                                <span class="live-badge"><span class="dot"></span> Live</span>
+                                <a href="https://gradsfantasy.id" target="_blank" rel="noopener noreferrer" title="Kunjungi gradsfantasy.id"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">GradsFantasy — Photography Booking & Studio Operations Platform</h3>
+                        <p class="project-desc">Platform layanan fotografi wisuda multi-kota (Jember, Malang, Jogja) dengan sistem booking interaktif, kalkulasi durasi otomatis, dan <em>schedule conflict detection engine</em>. Terintegrasi dengan portal operasional multi-role (Admin & Fotografer), manajemen pembayaran, sistem distribusi foto klien, serta integrasi WhatsApp.</p>
+                        <div class="project-tags">
+                            <span>PHP & MySQL</span>
+                            <span>JavaScript (AJAX)</span>
+                            <span>Multi-Role RBAC</span>
+                            <span>Schedule Engine</span>
+                            <span>WhatsApp Integration</span>
+                        </div>
+                        <a href="https://gradsfantasy.id" target="_blank" rel="noopener noreferrer" class="project-cta">
+                            Kunjungi gradsfantasy.id <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Project 2: SAE Creative -->
+                    <article class="project-card">
+                        <div class="project-top">
+                            <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
+                            <div class="project-links">
+                                <span class="live-badge"><span class="dot"></span> Live</span>
+                                <a href="https://saecreative.id" target="_blank" rel="noopener noreferrer" title="Kunjungi saecreative.id"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">SAE Creative — Wedding Studio & ERP Management Platform</h3>
+                        <p class="project-desc">Platform full-stack end-to-end untuk studio fotografi wedding. Mengintegrasikan portal publik (katalog visual interaktif & reservasi online) dengan dashboard ERP multi-role (Admin, Fotografer, Editor) untuk penjadwalan kru, pipeline pascaproduksi, pelacakan cetak, serta manajemen keuangan & auto-invoice PDF.</p>
+                        <div class="project-tags">
+                            <span>Laravel 12</span>
+                            <span>Inertia.js</span>
+                            <span>React.js</span>
+                            <span>Tailwind CSS</span>
+                            <span>MySQL</span>
+                            <span>ERP & Booking</span>
+                        </div>
+                        <a href="https://saecreative.id" target="_blank" rel="noopener noreferrer" class="project-cta">
+                            Kunjungi saecreative.id <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+
+                    <!-- Project 3: RESTful API / Dicoding Project -->
+                    <article class="project-card">
+                        <div class="project-top">
+                            <div class="project-icon"><i class="fas fa-server"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/GitReyy" target="_blank" rel="noopener noreferrer" title="Lihat di GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">RESTful API Web Service & Cloud Deploy</h3>
+                        <p class="project-desc">Pengembangan backend web service menggunakan Django REST Framework (DRF), telah melalui pengujian otomatis dengan Postman dan di-deploy pada infrastruktur Google Compute Engine (GCP).</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django REST</span>
+                            <span>Google Cloud</span>
+                            <span>Postman</span>
+                        </div>
+                        <a href="https://github.com/GitReyy" target="_blank" rel="noopener noreferrer" class="project-cta">
+                            Lihat Repository GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skill & Keahlian</h2>
+                    <p class="section-subtitle">Kombinasi kapabilitas teknis dan kemampuan interpersonal.</p>
+                </div>
+                
+                <div class="tabs" role="tablist">
+                    <button class="tab-button active" data-tab="hard-skills" role="tab">
+                        <i class="fas fa-laptop-code"></i> Hard Skills
+                    </button>
+                    <button class="tab-button" data-tab="soft-skills" role="tab">
+                        <i class="fas fa-handshake"></i> Soft Skills
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="hard-skills">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>HTML, CSS & JavaScript</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>UI Design & Typography</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Responsive Web Design</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-server"></i> Backend & Cloud</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Python & Django REST API</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>PHP & MySQL Database</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 93%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Google Cloud (GCP) & Postman</span>
+                                        <span class="skill-badge intermediate">Intermediate</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-palette"></i> Visual Design</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Infografis Statistik</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Typography & Layouting</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Branding Assets</span>
+                                        <span class="skill-badge intermediate">Intermediate</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-network-wired"></i> IT Support & Admin</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>IT Troubleshooting & Network</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Analisis Sistem Statistik</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Administrasi Sistem (ARKAS)</span>
+                                        <span class="skill-badge">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar"><div class="progress" style="width: 92%"></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="skill-category">
-                        <h3><i class="fas fa-tasks"></i> Manajemen & Analisis</h3>
-                        <ul class="soft-skill-list">
-                            <li><i class="fas fa-check-circle"></i><div><strong>Visual Communication:</strong> Menyajikan data rumit menjadi informasi visual (infografis) yang mudah dipahami.</div></li>
-                            <li><i class="fas fa-check-circle"></i><div><strong>Project Management:</strong> Terbiasa mengelola deadline ketat dan multi-tasking dalam lingkungan administrasi sekolah (TU).</div></li>
-                            <li><i class="fas fa-check-circle"></i><div><strong>Collaborative Teamwork:</strong> Mampu bekerja sama dalam tim lintas divisi untuk mencapai target.</div></li>
-                        </ul>
+                <div class="tab-content" id="soft-skills">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-lightbulb"></i> Profesionalisme</h3>
+                            <ul class="soft-skill-list">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Analytic Problem Solving:</strong> Kemampuan memecahkan kendala teknis IT maupun pengembangan sistem secara terstruktur.</div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>High Attention to Detail:</strong> Tingkat ketelitian tinggi dalam penulisan kode, pengujian API, serta pengelolaan data statistik & ARKAS.</div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Adaptive Learning:</strong> Cepat beradaptasi dengan ekosistem industri seperti di PLN Nusantara Power maupun teknologi cloud terbaru.</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-tasks"></i> Manajemen & Analisis</h3>
+                            <ul class="soft-skill-list">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Visual Communication:</strong> Menyajikan data rumit menjadi informasi visual (infografis) yang mudah dipahami pemangku kepentingan.</div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Time & Project Management:</strong> Terbiasa mengelola deadline ketat dan multi-tasking antara akademik, project, dan operasional.</div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Collaborative Teamwork:</strong> Mampu berkolaborasi aktif dengan tim lintas divisi untuk mencapai target operasional.</div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- Footer -->
     <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Rayhan - Problem Solving</h3>
-                    <p>Membangun teknologi melalui perpaduan <strong>logika data</strong> dan <strong>presisi kode</strong>. Bagi saya, setiap sistem adalah proses <strong>kalibrasi</strong> untuk menyelaraskan fungsionalitas dengan efisiensi. Terus berevolusi dan belajar untuk menjawab dinamika teknologi masa depan.</p>
+                <div class="footer-brand">
+                    <h3>Rayhan Hibatullah</h3>
+                    <p>Membangun teknologi melalui perpaduan <strong>logika data</strong> dan <strong>presisi kode</strong>. Setiap sistem adalah proses kalibrasi untuk menyelaraskan fungsionalitas dengan efisiensi.</p>
                 </div>
 
-                <div class="footer-section">
-                    <h4>Menu</h4>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
                     <ul>
                         <li><a href="#home">Beranda</a></li>
                         <li><a href="#about">Tentang Saya</a></li>
                         <li><a href="#education">Pendidikan</a></li>
+                        <li><a href="#projects">Project WebApp</a></li>
                         <li><a href="#skills">Skill</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Ikuti Saya</h4>
+
+                <div class="footer-social-wrap">
+                    <h4>Terhubung</h4>
                     <div class="footer-social">
-                        <a href="https://github.com/GitReyy" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/rayhan-hibatullah" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.tiktok.com/@justrvers" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.instagram.com/areyyvazia" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/GitReyy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rayhan-hibatullah" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@justrvers" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/gitreyy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Rayhan Hibatullah. Semua hak dilindungi.</p>
+                <p>&copy; 2026 Rayhan Hibatullah. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
